@@ -1,73 +1,32 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Crud Users
+Aplicação feita para estudos básicos do Nestjs com Prisma ORM
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Tecnologias Utilizadas:
+- [NestjS]('https://nestjs.com/') - Framework backend
+- [Prisma]('https://www.prisma.io/') - Object Relational Mapping (ORM)
+- [Postgresql]('https://www.postgresql.org/') - Banco de dados
+- [NestjS]('https://swagger.io/') - API de Documentação
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Estruturação do projeto:
+**Esta são é apenas para documentar os comandos que utilizei para facilitar o desenvolvimento do projeto, ```não precisam executá-los ao fazer clone da aplicação```**.  
+O comando ```npx i -g @nestjs/cli new crud_users``` utilizado para criação da estrutura básica do projeto.  
+O comando ```npm install -D prisma``` usado para instalação da lib do prisma.  
+O comando ```npx prisma init``` usado para criar o schema do prisma, onde é configurada as tabelas do banco de dados.  
+O comando ```npx prisma migrate dev --name "init"``` utilizado para criar a primeira migration.  
+O comando ```npx nest generate module prisma``` usado para criar o modulo do prisma que é responsável por organizar as chamados do serviço do prisma.  
+O comando ```npx nest generate service prisma``` usado para criar o serviço do prisma onde contém a chamadas das funções da biblioteca.  
+O comando ```npm install --save @nestjs/swagger swagger-ui-express``` usado para instalar a biblioteca do Swagger para criar a documentação das rotas.  
+O comando ```npx nest generate resource``` usado para criar a estrutura do módulo de usuários (aqui é criado os arquivos de dto, interface, user.module, user.service, user.controller) todos já mapeados pelo Swagger através dos decorators.  
 
-## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Como executar o projeto:
+Faça o clone do projeto.  
+Execute o comando ```npm install``` para instalar as dependências.  
+Renomear o arquivo de variáveis de ambiente com a string de conexão com as informações do seu banco de dados local: ```DATABASE_URL="postgresql://username:password@localhost:5432/databaseName?schema=public"```  
+Execute o comando de criação da migration: ```npx prisma migrate dev```  
+Executar o projeto: ```npm run start:dev```.  
+Para acessar o Swagger da aplicação acessa a rota: ```http://localhost:3000/api```  
 
-## Installation
 
-```bash
-$ npm install
-```
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+## Referências:
+O projeto foi criado com base no artigo [Building a REST API with NestJS and Prisma ORM]('https://medium.com/@teten.nugraha/building-a-rest-api-with-nestjs-and-prisma-orm-e52c8e182ae3').  

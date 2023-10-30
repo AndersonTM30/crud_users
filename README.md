@@ -2,10 +2,10 @@
 Aplicação feita para estudos básicos do Nestjs com Prisma ORM
 
 ## Tecnologias Utilizadas:
-- [NestjS](https://nestjs.com/) - Framework backend
+- [NestJS](https://nestjs.com/) - Framework backend
 - [Prisma](https://www.prisma.io/) - Object Relational Mapping (ORM)
 - [Postgresql](https://www.postgresql.org/) - Banco de dados
-- [NestjS](https://swagger.io/) - API de Documentação
+- [Swagger](https://swagger.io/) - API de Documentação
 
 ## Estruturação do projeto:
 Esta são é apenas para documentar os comandos que utilizei para facilitar o desenvolvimento do projeto, **não precisam executá-los ao fazer clone da aplicação**.  

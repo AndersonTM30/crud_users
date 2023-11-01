@@ -1,0 +1,23 @@
+version: '3.4'
+services:
+  app:
+    build: 
+      context: .
+      target: dev
+    environment:
+      - NODE_ENV=development
+    ports:
+      - '3000:3000' # houve um ajuste aqui
+    depends_on:
+      - db
+  db:
+    image: postgres:12
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - '5432:5432'
+    volumes:
+      - finances:/var/lib/postgresql/data/

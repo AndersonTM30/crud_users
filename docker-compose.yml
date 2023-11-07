@@ -8,7 +8,7 @@ services:
     environment:
       - NODE_ENV=development
     ports:
-      - '3000:3000' # houve um ajuste aqui
+      - '3000:3000'
     volumes:
       - .:/app
     depends_on:
@@ -26,7 +26,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
     ports:
-      - '0.0.0.0:5432:5432'
+      - '5432:5432'
     volumes:
       - ./data:/var/lib/postgresql/data/
   prisma:

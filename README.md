@@ -1,4 +1,4 @@
-# Crud Users
+﻿# Crud Users
 Aplicação feita para estudos básicos do Nestjs com Prisma ORM
 
 ## Tecnologias Utilizadas:
@@ -18,8 +18,16 @@ O comando ```npx nest generate service prisma``` usado para criar o serviço do 
 O comando ```npm install --save @nestjs/swagger swagger-ui-express``` usado para instalar a biblioteca do Swagger para criar a documentação das rotas.  
 O comando ```npx nest generate resource``` usado para criar a estrutura do módulo de usuários (aqui é criado os arquivos de dto, interface, user.module, user.service, user.controller) todos já mapeados pelo Swagger através dos decorators.  
 
+## Como executar o projeto no docker:
+Fazer clone do projeto.  
+Renomear o arquivo de variáveis de ambiente com a string de conexão com as informações do seu banco de dados local: ```DATABASE_URL="postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:${DB_PORT}/${POSTGRES_DB}?schema=public"```.  
+Executar o comando ```docker-compose up -d``` para criar as imagens do banco de dados e da aplicação.  
+Para parar os containers executa o ```comando docker-compose stop```.  
+Para deletar os containers utiliza o ```comando docker-compose down```.  
+Para criar as imagens sem cache executa o comando ```docker-compose --build -d```.  
 
-## Como executar o projeto:
+
+## Como executar o projeto local:
 Faça o clone do projeto.  
 Execute o comando ```npm install``` para instalar as dependências.  
 Renomear o arquivo de variáveis de ambiente com a string de conexão com as informações do seu banco de dados local: ```DATABASE_URL="postgresql://username:password@localhost:5432/databaseName?schema=public"```  

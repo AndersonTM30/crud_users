@@ -13,8 +13,6 @@ export class UsersService {
       createUserDto.password,
       saltOrRounds,
     );
-    console.log(typeof createUserDto.password);
-    // return createUserDto;
     return this.prisma.user.create({ data: createUserDto });
   }
 
@@ -23,6 +21,21 @@ export class UsersService {
       select: {
         id: true,
         username: true,
+      },
+    });
+  }
+
+  findByUsername(username: string) {
+    return this.prisma.user.findFirst({
+      where: {
+        username: {
+          contains: username,
+        },
+      },
+      select: {
+        id: true,
+        username: true,
+        password: true,
       },
     });
   }

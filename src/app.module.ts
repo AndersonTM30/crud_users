@@ -5,6 +5,7 @@ import { AuthService } from './authservice/authservice.service';
 import { JwtModule } from '@nestjs/jwt';
 import { UsersService } from './users/users.service';
 import { AuthController } from './authservice/auth.controller';
+import { JwtAuthGuard } from './authservice/auth.guard';
 
 @Module({
   imports: [
@@ -16,9 +17,9 @@ import { AuthController } from './authservice/auth.controller';
       signOptions: { expiresIn: 60 },
     }),
   ],
-  providers: [AuthService, UsersService],
+  providers: [AuthService, UsersService, JwtAuthGuard],
   controllers: [AuthController],
-  // providers: [AppService],
+  // providers: [JwtAuthGuard],
   exports: [AuthService],
 })
 export class AppModule {}

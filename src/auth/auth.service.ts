@@ -18,6 +18,10 @@ export class AuthService {
 
   async signIn(username: string, password: string): Promise<AuthEntity> {
     const user = await this.usersService.findByUsername(username);
+    if (!user) {
+      throw new NotFoundException('User not found!');
+    }
+
     const passwordIsValid = await this.verifyPassword(password, user?.password);
 
     if (!passwordIsValid) {

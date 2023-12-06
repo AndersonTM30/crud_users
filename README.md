@@ -35,6 +35,8 @@ Execute o comando de criação da migration: ```npx prisma migrate dev```
 Executar o projeto: ```npm run start:dev```.  
 Para acessar o Swagger da aplicação acessa a rota: http://localhost:3000/api  
 
+## Como rodar os testes:
+Para rodar um arquivo de teste em específico execute o comando: ```npm test -- -t 'nome do caso de teste' nome.do.arquivo.spec.ts```
 
 ## Referências:
 O projeto foi criado com base no artigo [Building a REST API with NestJS and Prisma ORM](https://medium.com/@teten.nugraha/building-a-rest-api-with-nestjs-and-prisma-orm-e52c8e182ae3).  
